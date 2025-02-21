@@ -9,7 +9,7 @@ function App() {
   
       <div>
       <h1>React con Vite!</h1>
-      <p>Questa è la mia prima app con Vite!</p>
+      <p>Questa è la mia prima app con Vite</p>
       </div>
       
     
