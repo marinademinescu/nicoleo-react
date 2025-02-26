@@ -8,6 +8,7 @@ import Decrement from './components/Decrement/Decrement';
 import Reset from './components/Reset/Reset';
 import UseEffect from './components/UseEffect/UseEffect';
 import InputTesto from './components/InputTesto/InputTesto'
+import LoginForm from './components/LoginForm/LoginForm';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <UseEffect />
       <br />
       <InputTesto />
+      <LoginForm />
       <h1>React con Vite!</h1>
       <p>Questa è la mia prima app con Vite</p>
     </div>
