@@ -6,6 +6,7 @@ import CounterState from './components/CounterState/CounterState';
 import Increment from './components/Increment/Increment';
 import Decrement from './components/Decrement/Decrement';
 import Reset from './components/Reset/Reset';
+import UseEffect from './components/UseEffect/UseEffect';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <Increment />
       <Decrement />
       <Reset />
+      <UseEffect />
       <h1>React con Vite!</h1>
       <p>Questa è la mia prima app con Vite</p>
     </div>
