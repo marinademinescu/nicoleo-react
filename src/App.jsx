@@ -12,6 +12,9 @@ import LoginForm from './components/LoginForm/LoginForm';
 import Submit from './components/Submit/Submit';
 import UncontrolledInput from './components/UncontrolledInput/UncontrolledInput';
 import ItemList from './components/ItemList/ItemList';
+import CardChildren from './components/CardChildren/CardChildren';
+
+
 
 function App() {
 
@@ -32,6 +35,10 @@ function App() {
       <Submit />
       <UncontrolledInput />
       <ItemList items={items} />
+      <CardChildren>
+        <h1>Nuovo Contenuto</h1>
+        <p>Questo è un paragrafo personalizzato passato come children.</p>
+      </CardChildren>
       <h1>React con Vite!</h1>
       <p>Questa è la mia prima app con Vite</p>
     </div>
