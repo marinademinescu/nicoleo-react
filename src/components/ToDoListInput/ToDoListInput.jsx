@@ -1,11 +1,15 @@
 import useFilteredTodos from '../useFilteredTodos/useFilteredTodos';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { useMemo } from 'react';
 
 
 const ToDoListInput = () => {
   const [search, setSearch] = useState('')
+  const inputRef = useRef(null)
 
+  useEffect(() => {
+    inputRef.current.focus()
+  }, [])
 
   const list = [
     { id: 1, text: 'Acquistare latte' },
@@ -28,7 +32,7 @@ const ToDoListInput = () => {
 
     <>
       {search}
-      <input onChange={handleSearchChange} value={search} />
+      <input ref={inputRef}   onChange={handleSearchChange} value={search} />
       {listsFiltred.listTodo.map((e) => {
         return <div key={e.id}>{e.text} </div>
       })}
