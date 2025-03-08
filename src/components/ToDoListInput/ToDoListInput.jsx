@@ -1,5 +1,5 @@
 import useFilteredTodos from '../useFilteredTodos/useFilteredTodos';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 const ToDoListInput = () => {
   const [search, setSearch] = useState('')
@@ -12,13 +12,19 @@ const ToDoListInput = () => {
     { id: 4, text: 'Fare esercizio fisico' }
   ]
 
-  const listsFiltred = useFilteredTodos(list, search)
+
+  const handleSearchChange = useCallback((e) => {
+    setSearch(e.target.value)
+  }, [])
+
+
+  const listsFiltred = useFilteredTodos (list, search)
 
   return (
 
     <>
       {search}
-      <input onChange={(e) => setSearch(e.target.value)} />
+      <input onChange={handleSearchChange} value={search} />
       {listsFiltred.listTodo.map((e) => {
         return <div key={e.id}>{e.text} </div>
       })}
