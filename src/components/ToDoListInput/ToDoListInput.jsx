@@ -1,5 +1,7 @@
 import useFilteredTodos from '../useFilteredTodos/useFilteredTodos';
 import { useState, useCallback } from 'react';
+import { useMemo } from 'react';
+
 
 const ToDoListInput = () => {
   const [search, setSearch] = useState('')
@@ -18,7 +20,9 @@ const ToDoListInput = () => {
   }, [])
 
 
-  const listsFiltred = useFilteredTodos (list, search)
+  const listsFiltred = useMemo(() => {
+    return useFilteredTodos (list, search)
+  }, [list, search] )
 
   return (
 
