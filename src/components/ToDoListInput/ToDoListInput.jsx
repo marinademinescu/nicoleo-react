@@ -1,22 +1,17 @@
 import useFilteredTodos from '../useFilteredTodos/useFilteredTodos';
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect, useContext } from 'react';
 import { useMemo } from 'react';
+import { ListContext } from '../providers/ListProvider';
 
 
 const ToDoListInput = () => {
   const [search, setSearch] = useState('')
   const inputRef = useRef(null)
+  const {todos, updateTodo} = useContext(ListContext)
 
   useEffect(() => {
     inputRef.current.focus()
   }, [])
-
-  const list = [
-    { id: 1, text: 'Acquistare latte' },
-    { id: 2, text: 'Pulire la casa' },
-    { id: 3, text: 'Leggere un libro' },
-    { id: 4, text: 'Fare esercizio fisico' }
-  ]
 
 
   const handleSearchChange = useCallback((e) => {
@@ -25,16 +20,21 @@ const ToDoListInput = () => {
 
 
   const listsFiltred = useMemo(() => {
-    return useFilteredTodos (list, search)
-  }, [list, search] )
+    return useFilteredTodos (todos, search)
+  }, [todos, search] )
 
+
+  const handleUpdateTodo = (id, newText) => {
+    updateTodo(id, newText)
+  }
   return (
 
     <>
       {search}
       <input ref={inputRef}   onChange={handleSearchChange} value={search} />
       {listsFiltred.listTodo.map((e) => {
-        return <div key={e.id}>{e.text} </div>
+        return <div key={e.id}>{e.text} 
+        <button onClick={() => handleUpdateTodo(e.id, 'Nuovo testo')}>Aggiorna</button></div>
       })}
 
     </>
