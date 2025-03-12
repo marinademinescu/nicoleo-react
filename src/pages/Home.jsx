@@ -9,14 +9,16 @@ const Home = () => {
 
     return (
         <div>
-            <h2>Home Lista  todo</h2>
-            {todos.map((todo) => (
-                <li key={todo.id}>
-                    <h3>{todo.text}</h3>
-                </li>
-            ))
-            }
-
+            <h1>Home </h1>
+            <h2>Lista  todo</h2>
+            <ul>
+                {todos.map((todo) => (
+                    <li key={todo.id}>
+                        <h3>{todo.text}</h3>
+                    </li>
+                ))
+                }
+            </ul>
         </div>
     )
 }
