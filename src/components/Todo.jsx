@@ -6,7 +6,7 @@ const Todo = () => {
     const { id } = useParams()
     const [todo, setTodo] = useState("")
 
-    useEffect = (() => {
+    useEffect(() => {
         const fetchTodo = async () => {
             try {
                 const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
