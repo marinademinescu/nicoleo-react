@@ -1,7 +1,11 @@
 import useFetch from '../UseFetch/UseFetch'
+import { useNavigate } from 'react-router-dom'
 
 const TodoList = () => {
     const { data, loading, error } = useFetch('https://jsonplaceholder.typicode.com/todos')
+
+    const navigate = useNavigate()
+    
 
     if (loading) {
         return <div>Caricamento...</div>
@@ -17,7 +21,7 @@ const TodoList = () => {
             <ul>
                 {data.map((todo) => (
                     <li key={todo.id}>
-                        <h3>{todo.title}</h3>   
+                        <h3 onClick={() => navigate(`/todo/${todo.id}`)}>{todo.title}</h3>   
                     </li>
                 ))
 
