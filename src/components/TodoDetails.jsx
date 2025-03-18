@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 const TodoDetail = () => {
   const { id } = useParams()
   const [todo, setTodo] = useState(null)
+  const [searchParams, setSearchParams]  = useSearchParams()
+
 
     useEffect(() => {
         const fetchTodo = async () => {
@@ -30,6 +33,7 @@ const TodoDetail = () => {
       <h1>Dettagli del To-Do</h1>
       <h2>{todo.title}</h2>
       <p> {todo.id}</p>
+      Search: {searchParams.get("title")}
     </div>
   )
 }
