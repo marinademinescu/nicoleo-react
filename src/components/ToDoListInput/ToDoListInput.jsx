@@ -25,7 +25,7 @@ const ToDoListInput = () => {
 
 
   const handleUpdateTodo = (id, newText) => {
-    const updateTodo= updateTodo(id, newText)
+     updateTodo(id, newText)
   }
   return (
 
