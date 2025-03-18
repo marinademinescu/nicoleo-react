@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Layout from "./layouts/Layout";
 import TodoList from "./components/TodoList/TodoList";
 import Todo from "./components/Todo";
+import TodoDetails from "./components/TodoDetails";
 
 
 
@@ -19,6 +20,8 @@ function App() {
           <Route path="todolist" element={<TodoList />} />
           <Route path="about" element={<About />} />
           <Route path="todo/:id" element={<Todo />} />
+          <Route path="tododetails/:id" element={<TodoDetails />} />
+          
         </Route>
       </Routes>
 
