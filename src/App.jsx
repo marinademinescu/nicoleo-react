@@ -8,11 +8,11 @@ import Todo from "./components/Todo";
 import TodoDetails from "./components/TodoDetails";
 
 
-
 function App() {
 
   return (
-    <BrowserRouter>
+    
+       <BrowserRouter>
       <Navbar />
       <Routes >
         <Route path="/" element={<Layout />}>
@@ -26,6 +26,7 @@ function App() {
       </Routes>
 
     </BrowserRouter>
+   
   )
 
 }
