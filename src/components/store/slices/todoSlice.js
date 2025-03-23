@@ -20,10 +20,10 @@ const todoSlice = createSlice ({
             state.text = payload
         },
         updateData: (state, {payload}) => {
-            return state.map(item =>
+            const updateTodos = state.value.map((item ) =>
                 item.id === payload.id ? { ...item, ...payload } : item
               );
-            
+            state.value = updateTodos
         }
     
 

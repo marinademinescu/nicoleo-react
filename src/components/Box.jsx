@@ -11,9 +11,9 @@ const Box = () => {
     console.log(todos)
 
     const [form, setForm] = useState({
-        id: todos.id,
-        title: todos.title,
-        text: todos.text
+        id: " ",
+        title: " ",
+        text: " ",
        
     });
 
