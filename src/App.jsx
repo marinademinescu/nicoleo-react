@@ -6,6 +6,7 @@ import Layout from "./layouts/Layout";
 import TodoList from "./components/TodoList/TodoList";
 import Todo from "./components/Todo";
 import TodoDetails from "./components/TodoDetails";
+import Box from "./components/Box";
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="todo/:id" element={<Todo />} />
           <Route path="tododetails/:id" element={<TodoDetails />} />
-          
+          <Route path="/box" element={<Box />} />
         </Route>
       </Routes>
 

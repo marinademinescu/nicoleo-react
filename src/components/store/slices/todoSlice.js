@@ -3,10 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import React from 'react'
 
 const todoList = [
-    { id: 1, text: "Compra il latte" },
-    { id: 2, text: "Fai la spesa" },
-    { id: 3, text: "Leggi un libro" },
-    { id: 4, text: "Leggi il cartone del latte" }
+    { id: 1, text: "Compra il latte",title: "Latte" },
+    { id: 2, text: "Fai la spesa", title: "Spesa" },
+    { id: 3, text: "Leggi un libro", title: "Libro" },
+    { id: 4, text: "Leggi il cartone del latte", title: "Cartone" }
 ];
 
 const todoSlice = createSlice ({
@@ -18,10 +18,18 @@ const todoSlice = createSlice ({
         },
         upDateText: (state, {payload}) => {
             state.text = payload
+        },
+        updateData: (state, {payload}) => {
+            return state.map(item =>
+                item.id === payload.id ? { ...item, ...payload } : item
+              );
+            
         }
+    
+
     }
 
 })
  
-export const { upDateText, upDateTitle} = todoSlice.actions
+export const { upDateText, upDateTitle, updateData } = todoSlice.actions
 export default todoSlice.reducer
